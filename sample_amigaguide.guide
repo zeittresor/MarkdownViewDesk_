@@ -1,0 +1,29 @@
+@DATABASE MarkdownViewDeskDemo
+@TITLE "MarkdownViewDesk AmigaGuide Demo"
+@$VER: MarkdownViewDeskDemo 0.1.4 (05.06.26)
+
+@NODE Main "MarkdownViewDesk AmigaGuide Demo"
+Welcome to a small AmigaGuide test document.
+
+This viewer supports basic @{b}bold@{ub}, @{i}italic@{ui} and @{u}underlined@{uu} text commands.
+
+Jump to @{"Installation" LINK Install} or @{"Notes" LINK Notes}.
+@ENDNODE
+
+@NODE Install "Installation"
+1. Run install_windows.bat
+2. Run run_windows.bat
+3. Open .md, .guide or .diz files.
+
+Back to @{"Main" LINK Main}.
+@ENDNODE
+
+@NODE Notes "Notes"
+This is intentionally not a complete AmigaGuide v39/v40 clone.
+It is meant to make typical Amiga documentation files readable in the same viewer.
+
+@{line}
+Original source / updates: github.com/zeittresor
+
+Back to @{"Main" LINK Main}.
+@ENDNODE
