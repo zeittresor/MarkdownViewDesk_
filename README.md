@@ -2,6 +2,8 @@
 
 MarkdownViewDesk is a small Windows-friendly PyQt6 GUI application for opening and reading `README.md` files, AmigaGuide `.guide` files, `FILE_ID.DIZ` descriptions and other local text documents.
 
+<img width="1627" height="853" alt="grafik" src="https://github.com/user-attachments/assets/8958d955-8f54-4871-a73b-eefc26a320d1" />
+
 ## What it does
 
 - Opens `.md`, `.markdown`, `.mdown`, `.mkd`, `.guide`, `.diz` and `.txt` files.
