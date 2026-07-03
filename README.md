@@ -16,6 +16,8 @@ MarkdownViewDesk is a small Windows-friendly PyQt6 GUI application for opening a
 - Displays `FILE_ID.DIZ` / `.diz` files in a fixed-width 45-column view and highlights overflow instead of rewrapping lines.
 - Can be registered as a Windows `.md`, `.guide` and `.diz` file handler after building the EXE.
 
+<img width="1625" height="851" alt="grafik" src="https://github.com/user-attachments/assets/4b5675ca-84a8-461b-8812-360e93a7180f" />
+
 ## Quick start from source
 
 1. Install Python 3.10 or newer.
