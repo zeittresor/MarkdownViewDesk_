@@ -2,8 +2,6 @@
 
 MarkdownViewDesk is a small Windows-friendly PyQt6 GUI application for opening and reading `README.md` files, AmigaGuide `.guide` files, `FILE_ID.DIZ` descriptions and other local text documents.
 
-<img width="1627" height="853" alt="grafik" src="https://github.com/user-attachments/assets/8958d955-8f54-4871-a73b-eefc26a320d1" />
-
 ## What it does
 
 - Opens `.md`, `.markdown`, `.mdown`, `.mkd`, `.guide`, `.diz` and `.txt` files.
@@ -11,7 +9,7 @@ MarkdownViewDesk is a small Windows-friendly PyQt6 GUI application for opening a
 - Shows Markdown headings and AmigaGuide nodes in an outline panel.
 - Displays fenced code blocks with syntax highlighting.
 - Resolves relative local image and file links from the Markdown file location.
-- Supports app-wide themes: Light, Dark, Sepia, Ocean, Matrix, Purple and Hellfire / Hölle.
+- Supports app-wide themes: Light, Dark, Sepia, Ocean, Matrix, Aurora, Purple and Hellfire / Hölle.
 - Supports English and German UI text.
 - Includes a source view toggle.
 - Renders basic AmigaGuide `.guide` documents with node sections and internal LINK buttons.
@@ -84,6 +82,11 @@ This program disables JavaScript in the rendered document view and blocks local 
 GPL-3.0-or-later.
 
 ## Changelog
+
+### v0.1.5
+
+- Added the Aurora theme with dark blue/green/purple northern-light style tones.
+- Removed visible permalink `#` characters after Markdown headings while keeping outline navigation.
 
 ### v0.1.4
 

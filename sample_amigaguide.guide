@@ -1,6 +1,6 @@
 @DATABASE MarkdownViewDeskDemo
 @TITLE "MarkdownViewDesk AmigaGuide Demo"
-@$VER: MarkdownViewDeskDemo 0.1.4 (05.06.26)
+@$VER: MarkdownViewDeskDemo 0.1.5 (05.06.26)
 
 @NODE Main "MarkdownViewDesk AmigaGuide Demo"
 Welcome to a small AmigaGuide test document.

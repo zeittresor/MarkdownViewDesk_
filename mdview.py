@@ -47,14 +47,14 @@ from PyQt6.QtWidgets import (
 )
 
 APP_NAME = "MarkdownViewDesk"
-APP_VERSION = "0.1.4"
+APP_VERSION = "0.1.5"
 APP_SOURCE_URL = "github.com/zeittresor"
 MARKDOWN_EXTENSIONS = {".md", ".markdown", ".mdown", ".mkd", ".txt"}
 AMIGAGUIDE_EXTENSIONS = {".guide"}
 DIZ_EXTENSIONS = {".diz"}
 SUPPORTED_EXTENSIONS = MARKDOWN_EXTENSIONS | AMIGAGUIDE_EXTENSIONS | DIZ_EXTENSIONS
 
-THEME_ORDER = ["light", "dark", "sepia", "ocean", "matrix", "purple", "hellfire"]
+THEME_ORDER = ["light", "dark", "sepia", "ocean", "matrix", "aurora", "purple", "hellfire"]
 THEME_LABELS = {
     "en": {
         "light": "Light",
@@ -63,6 +63,7 @@ THEME_LABELS = {
         "ocean": "Ocean",
         "matrix": "Matrix",
         "purple": "Purple",
+        "aurora": "Aurora",
         "hellfire": "Hellfire",
     },
     "de": {
@@ -72,6 +73,7 @@ THEME_LABELS = {
         "ocean": "Ocean",
         "matrix": "Matrix",
         "purple": "Purple",
+        "aurora": "Aurora",
         "hellfire": "Hölle",
     },
 }
@@ -87,6 +89,9 @@ THEME_ALIASES = {
     "ocean": "ocean",
     "matrix": "matrix",
     "purple": "purple",
+    "aurora": "aurora",
+    "nordlicht": "aurora",
+    "polarlicht": "aurora",
     "violett": "purple",
     "lila": "purple",
     "hölle": "hellfire",
@@ -132,7 +137,7 @@ I18N = {
             "Rendering stack: PyQt6 WebEngine, Python-Markdown and Pygments.\n"
             "License: GPL-3.0-or-later."
         ),
-        "welcome_md": """# MarkdownViewDesk\n\nOpen a `README.md`, AmigaGuide `.guide`, `FILE_ID.DIZ` or another supported text document with **File → Open** or drag it into this window.\n\n## Supported display features\n\n- Headings with outline navigation\n- Tables\n- Fenced code blocks with syntax highlighting\n- Task lists like `- [x] done`\n- Relative image and file links\n- App-wide Light, Dark, Sepia, Ocean, Matrix, Purple and Hellfire themes\n- English and German user interface\n- Source view toggle
+        "welcome_md": """# MarkdownViewDesk\n\nOpen a `README.md`, AmigaGuide `.guide`, `FILE_ID.DIZ` or another supported text document with **File → Open** or drag it into this window.\n\n## Supported display features\n\n- Headings with outline navigation\n- Tables\n- Fenced code blocks with syntax highlighting\n- Task lists like `- [x] done`\n- Relative image and file links\n- App-wide Light, Dark, Sepia, Ocean, Matrix, Aurora, Purple and Hellfire themes\n- English and German user interface\n- Source view toggle
 - Basic AmigaGuide `.guide` rendering
 - Fixed-width `FILE_ID.DIZ` / `.diz` display\n\n```python\ndef hello_markdown():\n    print(\"MarkdownViewDesk is ready.\")\n```\n""",
     },
@@ -172,7 +177,7 @@ I18N = {
             "Rendering-Stack: PyQt6 WebEngine, Python-Markdown und Pygments.\n"
             "Lizenz: GPL-3.0-or-later."
         ),
-        "welcome_md": """# MarkdownViewDesk\n\nÖffne eine `README.md`, AmigaGuide-`.guide`, `FILE_ID.DIZ` oder ein anderes unterstütztes Textdokument über **Datei → Öffnen** oder ziehe die Datei in dieses Fenster.\n\n## Unterstützte Darstellung\n\n- Überschriften mit Gliederungsnavigation\n- Tabellen\n- Codeblöcke mit Syntaxhervorhebung\n- Aufgabenlisten wie `- [x] erledigt`\n- Relative Bild- und Dateilinks\n- App-weite Themes: Hell, Dunkel, Sepia, Ocean, Matrix, Purple und Hölle\n- Englische und deutsche Benutzeroberfläche\n- Umschaltbare Quelltextansicht
+        "welcome_md": """# MarkdownViewDesk\n\nÖffne eine `README.md`, AmigaGuide-`.guide`, `FILE_ID.DIZ` oder ein anderes unterstütztes Textdokument über **Datei → Öffnen** oder ziehe die Datei in dieses Fenster.\n\n## Unterstützte Darstellung\n\n- Überschriften mit Gliederungsnavigation\n- Tabellen\n- Codeblöcke mit Syntaxhervorhebung\n- Aufgabenlisten wie `- [x] erledigt`\n- Relative Bild- und Dateilinks\n- App-weite Themes: Hell, Dunkel, Sepia, Ocean, Matrix, Aurora, Purple und Hölle\n- Englische und deutsche Benutzeroberfläche\n- Umschaltbare Quelltextansicht
 - Einfache AmigaGuide-`.guide`-Darstellung
 - Festbreite Anzeige für `FILE_ID.DIZ` / `.diz`\n\n```python\ndef hello_markdown():\n    print(\"MarkdownViewDesk ist bereit.\")\n```\n""",
     },
@@ -239,6 +244,18 @@ APP_THEME = {
         "selection_bg": "#0b7a2d",
         "selection_fg": "#eaffea",
     },
+    "aurora": {
+        "app_bg": "#07111f",
+        "panel_bg": "#0b1d2d",
+        "control_bg": "#10263a",
+        "control_alt": "#16344d",
+        "fg": "#eaffff",
+        "muted": "#9bd5e8",
+        "border": "#2dd4bf",
+        "accent": "#a7f3d0",
+        "selection_bg": "#7c3aed",
+        "selection_fg": "#ffffff",
+    },
     "purple": {
         "app_bg": "#12061f",
         "panel_bg": "#1d0b33",
@@ -271,6 +288,7 @@ PYGMENTS_STYLE_BY_THEME = {
     "sepia": "friendly",
     "ocean": "native",
     "matrix": "native",
+    "aurora": "native",
     "purple": "monokai",
     "hellfire": "monokai",
 }
@@ -824,6 +842,26 @@ body.theme-matrix {
   --quote-border: #00ff66;
   --table-alt: #061106;
   --kbd-bg: #081808;
+}
+body.theme-aurora {
+  --bg: #07111f;
+  --fg: #eaffff;
+  --muted: #9bd5e8;
+  --border: #2dd4bf;
+  --soft: #0b1d2d;
+  --link: #a7f3d0;
+  --code-bg: #061626;
+  --code-fg: #f0fdff;
+  --code-border: #38bdf8;
+  --quote-border: #c084fc;
+  --table-alt: #0b1d2d;
+  --kbd-bg: #10263a;
+}
+body.theme-aurora .markdown-body {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(45, 212, 191, 0.14), transparent 26%),
+    radial-gradient(circle at 88% 12%, rgba(192, 132, 252, 0.13), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(34, 197, 94, 0.08), transparent 34%);
 }
 body.theme-purple {
   --bg: #12061f;
@@ -1435,7 +1473,8 @@ def render_markdown_to_html(text: str) -> tuple[str, list[Heading]]:
         ],
         extension_configs={
             "toc": {
-                "permalink": "#",
+                "permalink": False,
+                "anchorlink": False,
                 "slugify": slugify_unicode,
             },
             "codehilite": {

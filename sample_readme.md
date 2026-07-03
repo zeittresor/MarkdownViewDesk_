@@ -33,6 +33,7 @@ Inline code should also be readable: `MarkdownViewDesk.exe README.md`.
 | Sepia | Warm reading view |
 | Ocean | Blue-green dark view |
 | Matrix | Green terminal-style view |
+| Aurora | Northern-light dark view |
 | Purple | Violet/purple dark view |
 | Hölle | Warm red/orange dark view |
 
